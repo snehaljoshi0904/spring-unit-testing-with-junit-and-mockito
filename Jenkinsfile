@@ -37,5 +37,6 @@ xunit([JUnit(excludesPattern: '', pattern: '', stopProcessingIfError: true)])
 {
 bat 'C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn package'
 	bat 'C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn clean install'
+	bat 'C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn sonar:sonar'
 }
 }
