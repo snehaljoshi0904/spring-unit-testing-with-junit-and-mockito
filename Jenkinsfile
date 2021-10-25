@@ -25,4 +25,10 @@ stage("Quality Gate"){
     }
 }
 }
+
+
+stage('Unit Testing'){
+
+bat "C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn test"
+}
 }
