@@ -35,6 +35,6 @@ xunit([JUnit(excludesPattern: '', pattern: '', stopProcessingIfError: true)])
 	
 	stage('Code Coverage')
 {
-sh 'mvn package'
+bat 'mvn package'
 }
 }
