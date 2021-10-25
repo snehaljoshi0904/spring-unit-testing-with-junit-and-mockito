@@ -11,6 +11,12 @@ stage('Initial Setup'){
 bat "C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn clean compile"
 }
 	
+stage('Unit Testing'){
+
+bat "C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn test"
+xunit([JUnit(excludesPattern: '', pattern: '', stopProcessingIfError: true)])
+}
+	
 stage('Code Coverage'){
         bat 'C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn package'
 	}
@@ -31,11 +37,6 @@ stage('SonarQube analysis') {
 }*/
 
 
-stage('Unit Testing'){
-
-bat "C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn test"
-xunit([JUnit(excludesPattern: '', pattern: '', stopProcessingIfError: true)])
-}
 	
 	
 }
