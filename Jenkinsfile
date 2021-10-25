@@ -36,5 +36,6 @@ xunit([JUnit(excludesPattern: '', pattern: '', stopProcessingIfError: true)])
 	stage('Code Coverage')
 {
 bat 'C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn package'
+	bat 'C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn clean install'
 }
 }
