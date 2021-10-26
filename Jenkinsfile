@@ -21,6 +21,10 @@ stage('Code Coverage'){
  bat 'C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn package'
 }
 	
+stage('Code security scan'){
+ bat 'C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn findbugs:findbugs'
+}
+	
 stage('SonarQube analysis') {
   withSonarQubeEnv(installationName: 'sonar') {			 
   bat 'C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar -Dsonar.projectKey=spring-unit-testing-with-junit-and-mockito_New -Dsonar.organization=learning-cicd'
