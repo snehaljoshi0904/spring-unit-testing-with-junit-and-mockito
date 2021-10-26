@@ -31,6 +31,10 @@ stage('Code Quality analysis') {
     }	 	
  }
 	
+	stage('Docker file scan') {
+		bat 'C:\\devops\\terrascan_1.11.0_Windows_x86_64\\terrascan scan --iac-type docker'
+	}
+	
 stage("Quality Gate"){
   timeout(time: 1, unit: 'HOURS') { 
     def qg = waitForQualityGate() 
