@@ -19,9 +19,12 @@ public class ItemBusinessService {
 	public Item retreiveHardcodedItem() {
 		return new Item(1, "Ball", 10, 100);
 	}
-	
-	public List<Item> retrieveAllItems() throws SQLException {
+	public void doSomething (String aString) throws SQLException {
 		Connection conn = DriverManager.getConnection("jdbc:derby:memory:myDB;create=true", "login", "");
+		throw new SQLException();
+   }
+	public List<Item> retrieveAllItems()  {
+		
 		
 		List<Item> items = repository.findAll();
 		
