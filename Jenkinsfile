@@ -14,7 +14,7 @@ bat "C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn clean compile"
 stage('Unit Testing'){
 
 bat "C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn test"
-xunit([JUnit(excludesPattern: '', pattern: '', stopProcessingIfError: true)])
+
 }
 	
 stage('Code Coverage'){
@@ -27,7 +27,7 @@ stage('Code security scan'){
 	
 stage('Code Quality analysis') {
   withSonarQubeEnv(installationName: 'sonar') {			 
-  bat 'C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar -Dsonar.projectKey=spring-unit-testing-with-junit-and-mockito_New -Dsonar.organization=learning-cicd'
+  bat 'C:\\apache-maven-3.6.0-bin\\apache-maven-3.6.0\\bin\\mvn sonar:sonar -Dsonar.projectKey=spring-unit-testing-with-junit-and-mockito_New -Dsonar.organization=learning-cicd'
     }	 	
  }
 	
